@@ -40,7 +40,7 @@ Make sure you have the necessary gems (including the [NuoDB Ruby Driver](https:/
 #### 4. Setup Keys
 NuoKeg expects to find the API keys that it needs in environment variables. You can set them in a ruby config file
 
-```
+```ruby
 ENV["BREWERY_DB_KEY"]="YOURKEY"
 ENV["TWITTER_CONSUMER_KEY"]="YOURKEY"
 ENV["TWITTER_CONSUMER_SECRET"]="YOURKEY"
