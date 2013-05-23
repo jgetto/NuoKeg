@@ -1,0 +1,37 @@
+<div class="row">
+<div class="span5">
+	<% if beer.label_url %>
+		<%= image_tag(beer.label_url)%>
+	<% else %>
+		<%= image_tag('nuoDB_logo_rgb_300.jpg')%>
+	<% end %>
+</div>
+<div class="span7">		
+	<p class="beer-brewery">
+	  <%= beer.brewery ? beer.brewery.name : "" %>
+	</p>
+	<p class="beer-name">
+		  <%= beer.name %>
+	</p>
+	<p class="beer-style">
+	  <%= beer.style ? beer.style.name : "" %>
+	</p>
+	<p>
+	  <%= beer.description %>
+	</p>
+		
+	<p>
+	  <b>ABV:</b>
+	  <%= beer.abv ? beer.abv : 'Unknown' %>
+	</p>
+	<p>
+	  <b>IBU:</b>
+	  <%= beer.ibu ? beer.ibu : 'Unknown' %>
+	</p>
+	<p>
+	  <b>Organic:</b>
+	  <%= beer.is_organic ? 'Yes' : 'No' %>
+	</p>
+  
+</div>
+</div>

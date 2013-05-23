@@ -1,0 +1,27 @@
+
+<div class="row">
+<%= form_tag("/beers/search", :method => :get, :remote => true, :class => 'form-search', :id => 'beer-search-form') do %>
+  <div class="span10">
+  	<%= text_field_tag(:q, nil, :placeholder => "New Keg Of...", :class => "input-giant", :id => 'beer-search-input', :autocomplete => "off") %>
+  </div>
+  <div class="span2">
+  	<%= submit_tag("Go", :class => 'btn btn-giant', :id => 'beer-search-btn', :style => 'width:100%;') %>
+  </div>
+<% end %>
+</div>
+<p></p>
+<div class="row">
+	<div class="span12">
+<table class="table table-striped " id="beerlist">
+  <thead><tr>
+    <th>Name</th>
+    <th>Brewery</th>
+   	<th>Style</th>
+    <th></th>
+  </tr>  </thead>
+
+  <tr><td colspan=6 style="text-align:center;color:#AAA">search for beer</td></tr>
+</table>
+
+</div>
+</div>

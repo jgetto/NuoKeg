@@ -1,0 +1,76 @@
+<div class="row">
+  <div class="span12">
+<h1 style="float:left;">Available Kegs</h1><h3 style="float:left;padding-left:10px;padding-top:3px;"><%= link_to "add a keg", new_keg_path %></h3>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Keg</th>
+    <th>Beer</th>
+	  <th>Brewery</th>
+    <th>Tapped On</th>
+    <th>Finished On</th>
+    <th></th>
+    <th></th>
+  </tr>
+  </thead>
+
+<% @current_kegs.each do |keg| %>
+  <tr>
+    <td><%= keg.id %></td>
+    <td><%= keg.beer.name %></td>
+	  <td><%= keg.beer.brewery ? keg.beer.brewery.name : "" %></td>
+    <td><%= keg.start_date ? keg.start_date.localtime.strftime("%B %d, %Y") : '<span class="muted">Not Yet</span>'.html_safe %></td>
+    <td><%= keg.end_date  ? keg.end_date.localtime.strftime("%B %d, %Y") : '<span class="muted">Not Yet</span>'.html_safe %></td>
+    <td><%= link_to 'Show', keg %></td>
+    <% if keg.is_on_tap %>
+      <td><%= link_to 'Finish', keg_finish_path(keg), :method => :post %></td>
+    <% else %>
+      <td><%= link_to 'Tap it', keg_tap_path(keg), :method => :post %></td>
+    <% end %>
+  </tr>
+<% end %>
+<% if @current_kegs.count == 0%>
+<tr>
+  <td colspan=7 style="text-align:center;color:#AAA;"> all out. <%= link_to "add a keg", new_keg_path %></td>
+</tr>
+<% end %>
+
+</table>
+<br/>
+<h1>Past Kegs</h1>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Keg</th>
+    <th>Beer</th>
+	  <th>Brewery</th>
+    <th>Tapped On</th>
+    <th>Finished On</th>
+    <th></th>
+  </tr>
+</thead>
+
+<% @past_kegs.each do |keg| %>
+  <tr>
+    <td><%= keg.id %></td>
+    <td><%= keg.beer.name %></td>
+	  <td><%= keg.beer.brewery ? keg.beer.brewery.name : "" %></td>
+    <td><%= keg.start_date.localtime.strftime("%B %d, %Y") %></td>
+    <td><%= keg.end_date.localtime.strftime("%B %d, %Y") %></td>
+    <td><%= link_to 'Show', keg %></td>
+  </tr>
+<% end %>
+
+<% if @past_kegs.count == 0%>
+<tr>
+  <td colspan=7 style="text-align:center;color:#AAA;"> kegs show up here when you finish them</td>
+</tr>
+<% end %>
+
+</table>
+
+<br />
+</div>
+</div>

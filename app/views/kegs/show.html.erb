@@ -1,0 +1,35 @@
+<% if @keg %>
+<%= render :partial => 'beers/beer_info', :locals => {:beer => @keg.beer} %>
+
+<div class="row">
+  <div class="span5">
+  </div>
+  <div class="span7">
+  <% unless @keg.end_date%>
+    <% if @keg.is_on_tap %>
+      <%= button_to "Finish It", keg_finish_path(@keg), :class => 'btn btn-large'%>
+    <% else %>
+      <%= button_to "Tap It", keg_tap_path(@keg), :class => 'btn btn-large'%>
+    <% end %>
+  <% end %>
+  </div>
+</div>
+<% else %>
+<div class="row">
+<div class="span5">
+                <%= image_tag('nuoDB_logo_rgb_300.jpg')%>
+</div>
+<div class="span7">
+        <p class="beer-brewery">
+		Oh No!
+        </p>
+        <p class="beer-name">
+		No Beer Is On Tap
+        </p>
+        <p class="beer-style">
+		You should probably talk to <span class="muted"><del>Seth</del></span> Amy.
+        </p>
+
+</div>
+</div>
+<% end %>

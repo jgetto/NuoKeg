@@ -1,0 +1,8 @@
+<tr>
+  <td><%= beer.name %></td>
+  <td><%= beer.brewery ? beer.brewery.name : "" %></td>
+  <td><%= beer.style ? beer.style.name : "" %></td>
+  <td><%= link_to 'Details', beer %></td>
+  <td><%= link_to 'Add a Keg', kegs_path(:params => {:keg => {:beer_id => beer.id}}), :method => :post  %></td>
+</tr>
+</tr>

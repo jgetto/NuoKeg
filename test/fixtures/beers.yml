@@ -1,0 +1,38 @@
+# == Schema Information
+#
+# Table name: beers
+#
+#  id                 :integer          not null, primary key
+#  guid               :string
+#  name               :string
+#  description        :string
+#  abv                :integer
+#  ibu                :integer
+#  is_organic         :boolean
+#  label_url          :string
+#  style_id           :string
+#  brewery_id         :integer
+#  remote_update_date :timestamp
+#  created_at         :timestamp        not null
+#  updated_at         :timestamp        not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  guid: MyString
+  abv: 9.99
+  ibu: 1
+  name: MyString
+  style: MyString
+  category: MyString
+  description: MyString
+
+two:
+  guid: MyString
+  abv: 9.99
+  ibu: 1
+  name: MyString
+  style: MyString
+  category: MyString
+  description: MyString

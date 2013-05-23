@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: kegs
+#
+#  id         :integer          not null, primary key
+#  beer_id    :integer
+#  start_date :timestamp
+#  end_date   :timestamp
+#  is_on_tap  :boolean          default(FALSE)
+#  created_at :timestamp        not null
+#  updated_at :timestamp        not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  beer_guid: MyString
+  name: MyString
+  start_date: 2013-02-01 20:34:04
+  end_date: 2013-02-01 20:34:04
+
+two:
+  beer_guid: MyString
+  name: MyString
+  start_date: 2013-02-01 20:34:04
+  end_date: 2013-02-01 20:34:04

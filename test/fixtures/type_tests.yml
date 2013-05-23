@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  binary: 
+  boolean: false
+  date: 2013-02-16
+  datetime: 2013-02-16 21:35:36
+  decima: 9.99
+  float: 1.5
+  integer: 1
+  string: MyString
+  text: MyText
+  time: 2013-02-16 21:35:36
+  timestamp: 2013-02-16 21:35:36
+
+two:
+  binary: 
+  boolean: false
+  date: 2013-02-16
+  datetime: 2013-02-16 21:35:36
+  decima: 9.99
+  float: 1.5
+  integer: 1
+  string: MyString
+  text: MyText
+  time: 2013-02-16 21:35:36
+  timestamp: 2013-02-16 21:35:36

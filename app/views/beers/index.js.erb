@@ -1,0 +1,9 @@
+<% # encoding: utf-8 %>
+
+$('#beerlist').append('<%= j render(@beers).force_encoding("utf-8") %>');
+<% if @beers.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate(@beers) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>
+  

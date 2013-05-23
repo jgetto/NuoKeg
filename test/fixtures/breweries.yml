@@ -1,0 +1,38 @@
+# == Schema Information
+#
+# Table name: breweries
+#
+#  id                 :integer          not null, primary key
+#  guid               :string
+#  name               :string
+#  description        :string
+#  website            :string
+#  established        :integer
+#  is_organic         :boolean
+#  image_url          :string
+#  remote_update_date :timestamp
+#  created_at         :timestamp        not null
+#  updated_at         :timestamp        not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  guid: MyString
+  name: MyString
+  description: MyString
+  website: MyString
+  established: 1
+  is_organic: false
+  image_url: MyString
+  remote_update_date: 2013-02-16 13:44:11
+
+two:
+  guid: MyString
+  name: MyString
+  description: MyString
+  website: MyString
+  established: 1
+  is_organic: false
+  image_url: MyString
+  remote_update_date: 2013-02-16 13:44:11

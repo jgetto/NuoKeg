@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NuoKeg</title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  
+  <%= csrf_meta_tags %>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <%= link_to "NuoKeg", root_path, :class => 'brand'%>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li <%= params[:controller] == 'kegs' && params[:action] == "current" ? "class=active" : "" %>><%= link_to "Current Keg", kegs_current_path  %></li>
+            <li <%= params[:controller] == 'kegs' && params[:action] != "current" ? "class=active" : "" %>><%= link_to "Kegs", kegs_path %></li>
+            <li <%= params[:controller] == 'beers' ? "class=active" : "" %>><%= link_to "Beers", beers_path %></li>
+            <!-- <li><%= link_to "Breweries" %></li> -->
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="notice notice-success">
+      <div class="container">
+        <div class="span12 notice-success-text">
+          <%= flash[:notice]%>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container">
+		<%= yield %>
+  </div>
+  
+  <%= javascript_include_tag "application" %>
+  <% if flash[:notice] %>
+    <script language='javascript' type='text/javascript'>
+      $(document).ready(function() {
+        
+        $(".notice-success").slideDown().delay(2000).slideUp();
+      });
+    </script>
+  <% end %>
+</body>
+</html>

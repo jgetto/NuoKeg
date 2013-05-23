@@ -1,0 +1,24 @@
+# == Schema Information
+#
+# Table name: styles
+#
+#  id          :integer          not null, primary key
+#  category_id :integer
+#  name        :string
+#  description :string
+#  guid        :string
+#  created_at  :timestamp        not null
+#  updated_at  :timestamp        not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  category_id: 1
+  name: MyString
+  description: MyString
+
+two:
+  category_id: 1
+  name: MyString
+  description: MyString
