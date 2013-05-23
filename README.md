@@ -1,7 +1,7 @@
 NuoKeg
 ======
 
-NuoKeg is a NuoDB backed Rails app that I originally wrote to keep track of the beer on tap at the NuoDB office. It wound up being a reasonable example of using NuoDB with Rails so I'm putting it up as an example. 
+NuoKeg is a NuoDB backed Rails app that I originally wrote to keep track of the beer on tap at the NuoDB office. It wound up being a reasonable example of using NuoDB with Rails so I'm putting it up as a guide. 
 
 
 ## Prerequisites 
