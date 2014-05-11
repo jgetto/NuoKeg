@@ -9,6 +9,7 @@
 #  is_on_tap  :boolean          default(FALSE)
 #  created_at :timestamp        not null
 #  updated_at :timestamp        not null
+#  tap_id     :integer
 #
 
 require 'test_helper'

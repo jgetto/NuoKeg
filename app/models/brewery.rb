@@ -3,13 +3,13 @@
 # Table name: breweries
 #
 #  id                 :integer          not null, primary key
-#  guid               :string
-#  name               :string
-#  description        :string
-#  website            :string
+#  guid               :string(255)
+#  name               :string(255)
+#  description        :text
+#  website            :string(255)
 #  established        :integer
 #  is_organic         :boolean
-#  image_url          :string
+#  image_url          :string(255)
 #  remote_update_date :timestamp
 #  created_at         :timestamp        not null
 #  updated_at         :timestamp        not null

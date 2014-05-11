@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130216184411) do
+ActiveRecord::Schema.define(:version => 20140511215015) do
 
   create_table "beers", :force => true do |t|
     t.string    "guid"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(:version => 20130216184411) do
     t.timestamp "updated_at",                        :null => false
   end
 
+  add_index "BEERS", ["ID"], :name => "beers..primary_key", :length => {"ID"=>4}
+
   create_table "breweries", :force => true do |t|
     t.string    "guid"
     t.string    "name"
@@ -41,12 +43,16 @@ ActiveRecord::Schema.define(:version => 20130216184411) do
     t.timestamp "updated_at",         :null => false
   end
 
+  add_index "BREWERIES", ["ID"], :name => "breweries..primary_key", :length => {"ID"=>4}
+
   create_table "categories", :force => true do |t|
     t.string    "name"
     t.string    "guid"
     t.timestamp "created_at", :null => false
     t.timestamp "updated_at", :null => false
   end
+
+  add_index "CATEGORIES", ["ID"], :name => "categories..primary_key", :length => {"ID"=>4}
 
   create_table "kegs", :force => true do |t|
     t.integer   "beer_id"
@@ -55,7 +61,10 @@ ActiveRecord::Schema.define(:version => 20130216184411) do
     t.boolean   "is_on_tap",  :default => false
     t.timestamp "created_at",                    :null => false
     t.timestamp "updated_at",                    :null => false
+    t.integer   "tap_id"
   end
+
+  add_index "KEGS", ["ID"], :name => "kegs..primary_key", :length => {"ID"=>4}
 
   create_table "styles", :force => true do |t|
     t.integer   "category_id"
@@ -65,5 +74,15 @@ ActiveRecord::Schema.define(:version => 20130216184411) do
     t.timestamp "created_at",  :null => false
     t.timestamp "updated_at",  :null => false
   end
+
+  add_index "STYLES", ["ID"], :name => "styles..primary_key", :length => {"ID"=>4}
+
+  create_table "taps", :force => true do |t|
+    t.string    "name"
+    t.timestamp "created_at", :null => false
+    t.timestamp "updated_at", :null => false
+  end
+
+  add_index "TAPS", ["ID"], :name => "taps..primary_key", :length => {"ID"=>4}
 
 end

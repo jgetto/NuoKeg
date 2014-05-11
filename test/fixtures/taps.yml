@@ -1,18 +1,17 @@
 # == Schema Information
 #
-# Table name: categories
+# Table name: taps
 #
 #  id         :integer          not null, primary key
 #  name       :string(255)
-#  guid       :string(255)
 #  created_at :timestamp        not null
 #  updated_at :timestamp        not null
 #
 
-require 'test_helper'
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-class CategoryTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
-end
+one:
+  name: MyString
+
+two:
+  name: MyString

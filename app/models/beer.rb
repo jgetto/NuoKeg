@@ -3,14 +3,14 @@
 # Table name: beers
 #
 #  id                 :integer          not null, primary key
-#  guid               :string
-#  name               :string
-#  description        :string
-#  abv                :integer
+#  guid               :string(255)
+#  name               :string(255)
+#  description        :text
+#  abv                :float
 #  ibu                :integer
 #  is_organic         :boolean
-#  label_url          :string
-#  style_id           :string
+#  label_url          :string(255)
+#  style_id           :string(255)
 #  brewery_id         :integer
 #  remote_update_date :timestamp
 #  created_at         :timestamp        not null
@@ -20,7 +20,10 @@
 class Beer < ActiveRecord::Base
   attr_accessible :guid, :name, :description, :abv, :ibu, :is_organic, :label_url, :style_id, :brewery_id
   
+  
   has_many :kegs
+  has_many :taps, :through => :kegs  
+
   belongs_to :style
   belongs_to :brewery
   

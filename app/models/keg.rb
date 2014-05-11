@@ -9,12 +9,14 @@
 #  is_on_tap  :boolean          default(FALSE)
 #  created_at :timestamp        not null
 #  updated_at :timestamp        not null
+#  tap_id     :integer
 #
 
 class Keg < ActiveRecord::Base
-  attr_accessible :beer_id, :end_date, :start_date, :is_on_tap
+  attr_accessible :beer_id, :tap_id, :end_date, :start_date, :is_on_tap
 
   belongs_to :beer
+  belongs_to :tap
   
   scope :past, where('start_date IS NOT ?', nil).where('end_date IS NOT ?', nil).order('end_date DESC')
   
