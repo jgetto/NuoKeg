@@ -1,0 +1,13 @@
+<div class="row">
+  <% if @taps.length == 0 %>
+    No Taps!!
+  <% end %>
+  
+  <% @taps.each do |tap| %>
+    <div class="span4">
+      <%= render :partial => 'taps/tap_info', :locals => {:tap => tap} %>
+      
+    </div>
+  <% end %>
+
+</div>

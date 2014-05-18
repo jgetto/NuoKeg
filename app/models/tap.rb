@@ -13,4 +13,8 @@ class Tap < ActiveRecord::Base
   
   has_many :kegs
   has_many :beers, :through => :kegs  
+  
+  def on_tap
+    kegs.where('is_on_tap' => true).first
+  end
 end
