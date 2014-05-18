@@ -7,6 +7,7 @@ class CreateTaps < ActiveRecord::Migration
     end
     
      add_column :kegs, :tap_id, :integer
+     add_index :kegs, :tap_id
     
   end
 end
