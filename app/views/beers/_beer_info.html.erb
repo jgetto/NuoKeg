@@ -1,12 +1,12 @@
 <div class="row">
-<div class="span5">
+<div class="col-md-5">
 	<% if beer.label_url %>
 		<%= image_tag(beer.label_url)%>
 	<% else %>
-		<%= image_tag('nuoDB_logo_rgb_300.jpg')%>
+		<%= image_tag('nuoDB_logo_rgb_300.jpg', :class => 'img-responsive')%>
 	<% end %>
 </div>
-<div class="span7">		
+<div class="col-md-7">		
 	<p class="beer-brewery">
 	  <%= beer.brewery ? beer.brewery.name : "" %>
 	</p>

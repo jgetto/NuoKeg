@@ -15,8 +15,101 @@
 	
 }
 
+.beer-abv {
+	font-size:15px;
+	line-height: 40px;
+}
+
 .beer-brewery {
 	font-size:20px;
 	line-height: 20px;
 	padding-top:10px;
+}
+
+
+
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 500px;
+	height: 1000px;
+}
+
+/* flip speed goes here transition: 0.6s; */
+.flipper {
+	transition: 0.9s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
+
+.marquee-container {
+    height: 900px;
+    margin: 1em auto;
+    overflow: hidden;
+    background: white;
+    position: relative;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+.marquee {
+    top: 6em;
+    position: relative;
+    box-sizing: border-box;
+    animation: marquee 60s linear infinite;
+}
+
+/* Make it move! */
+@keyframes marquee {
+    0%   { top: 400px }
+    100% { top: -900px }
+}
+
+.marquee-container:before, .marquee-container::before,
+.marquee-container:after,  .marquee-container::after {
+    left: 0;
+    z-index: 1;
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    width: 100%; height: 2em;
+    background-image: linear-gradient(180deg, #FFF, rgba(255,255,255,0));
+}
+
+.marquee-container:after, .marquee-container::after {
+    bottom: 0;
+    transform: rotate(180deg);
+}
+
+.marquee-container:before, .marquee-container::before {
+    top: 0;
 }

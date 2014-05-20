@@ -1,2 +1,6 @@
-<%= tap.name %><br/>
-<%= tap.on_tap ? tap.on_tap.name : "Nothing is on tap!" %>
+<h1><%= tap.name %></h1>
+<% if tap.on_tap %>
+  <%= render :partial => 'beers/beer_info_sizeless', :locals => {:beer => tap.on_tap.beer} %>
+<% else %>
+  Nothing on tap
+<% end %>

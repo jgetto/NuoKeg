@@ -1,0 +1,38 @@
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	<div class="flipper">
+		<div class="front">
+      <div>
+      	<% if beer.label_url %>
+      		<%= image_tag(beer.label_url, :class => 'img-responsive', :style => 'max-height:500px;')%>
+      	<% else %>
+      		<%= image_tag('nuoDB_logo_rgb_300.jpg', :class => 'img-responsive', :style => 'max-height:500px;')%>
+      	<% end %>
+      </div>
+      <div>
+      	<p class="beer-brewery">
+      	  <%= beer.brewery ? beer.brewery.name : "" %>
+      	</p>
+      	<p class="beer-name">
+      		  <%= beer.name %>
+      	</p>
+      	<p class="beer-style">
+      	  <%= beer.style ? beer.style.name : "" %> <span class="beer-abv">(<%= beer.abv ? beer.abv : 'Unknown' %> abv)</span>
+      	</p>
+        	  
+        
+      </div>
+			
+		</div>
+		<div class="back">
+    	<p class="beer-name">
+    		  <%= beer.name %>&nbsp;<span class="beer-abv">(<%= beer.abv ? beer.abv : 'Unknown' %> abv)</span>
+    	</p>
+        <div class="marquee-container">
+        	<p class="marquee">
+            <%= beer.description %>
+        	</p>
+        </div>
+	
+		</div>
+	</div>
+</div>

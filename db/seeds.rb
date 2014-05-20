@@ -8,4 +8,4 @@
 
 Tap.create([{name: "Hoppful"}, {name: "Nitro"}, {name: "Hoppless"}])
 Beer.create([{guid: "asdf", name: "beer1", description: "a beer"},{guid: "qwer", name: "beer2", description: "another beer"},])
-Keg.create([{beer_id: Beer.first.id, tap_id: Tap.first.id}, {beer_id: Beer.last.id, tap_id: Tap.last.id}])
+Keg.create([{beer_id: Beer.first.id, tap_id: Tap.first.id, is_on_tap: true}, {beer_id: Beer.last.id, tap_id: Tap.last.id, is_on_tap: true}])
